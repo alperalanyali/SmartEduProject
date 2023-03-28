@@ -4,6 +4,7 @@ const express = require('express');
 
 const pageRoute = require('./routes/pageRoute');
 const courseRoute =require('./routes/courseRoute');
+const categoryRoute = require('./routes/categoryRoute');
 const app = express();
 
 // Connect DB
@@ -27,6 +28,7 @@ app.use(express.json());
 
 app.use('/',pageRoute);
 app.use('/courses',courseRoute);
+app.use('/categories',categoryRoute);
 
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
