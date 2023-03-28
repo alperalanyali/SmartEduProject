@@ -5,6 +5,9 @@ const express = require('express');
 const pageRoute = require('./routes/pageRoute');
 const courseRoute =require('./routes/courseRoute');
 const categoryRoute = require('./routes/categoryRoute');
+const authRoute = require('./routes/authRoute');
+
+
 const app = express();
 
 // Connect DB
@@ -27,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/',pageRoute);
+app.use('/auth',authRoute);
 app.use('/courses',courseRoute);
 app.use('/categories',categoryRoute);
 
