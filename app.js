@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const session = require('express-session')
-
+const MongoStore = require('connect-mongo');
 const pageRoute = require('./routes/pageRoute');
 const courseRoute =require('./routes/courseRoute');
 const categoryRoute = require('./routes/categoryRoute');
@@ -37,6 +37,7 @@ app.use(express.json());
 app.use(session({
   secret: 'my_keyboard_cat',
   resave: false,
+  store: MongoStore.create({ mongoUrl: 'mongodb+srv://alanyalialper:metallica1@smartedu.daxe9sy.mongodb.net/?retryWrites=true&w=majority' }),
   saveUninitialized: true
 }))
 
