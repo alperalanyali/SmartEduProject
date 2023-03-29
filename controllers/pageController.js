@@ -15,9 +15,7 @@ exports.getCoursesPage = (req,res)=>{
     res.status(200).render('courses',{page_name:'courses'});
 };
 
-exports.getDashboardPage = (req,res)=>{
-    res.status(200).render('dashboard',{page_name:'dashboard'});
-};
+
 
 exports.getLoginPage = (req,res)=>{
     res.status(200).render('login',{page_name:'login'},);
