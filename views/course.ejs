@@ -18,10 +18,12 @@
 							<img src="/images/blog_single.jpg" alt="" class="img-fluid">
 						</div>
 						<div class="mt-4 align-right">
+							<% if(!user.courses.includes(course._id)) { %>
 							<form method="POST" action="/courses/enroll" >
 								<input type="hidden" name="course_id" action="" value="<%= course._id%>">
-								<button type="submit" class="btn btn-lg btn-warning text-white"><span>ENROLL</span></button>
+								<button type="submit" class="btn btn-lg btn-warning text-white"><span>ENROLL</span></button>								
 							</form>
+					<% } %>
 						</div>
 						<div class="post-content">
 							
