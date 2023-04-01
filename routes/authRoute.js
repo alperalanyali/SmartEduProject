@@ -15,5 +15,7 @@ router.route('/register').post(
     ,userController.register);
 router.route('/login').post(userController.loginUser);
 router.route('/logout').get(userController.logoutUser);
+router.route('/:id').delete(userController.deleteUser);
 router.route('/dashboard').get(authMiddleware,userController.getDashboardPage);
+
 module.exports = router;
